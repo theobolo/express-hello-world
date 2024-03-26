@@ -1,0 +1,12 @@
+apiVersion: skaffold/v4beta8
+kind: Config
+metadata:
+  name: express-hello-world
+deploy:
+  helm:
+    releases:
+      - name: hello-world
+        chartPath: helm/hello-world
+        valuesFiles:
+          - helm/hello-world/values.yaml
+        version: 0.1.0
